@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MY CYBER WORLD</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #050807;
+    color: #e5fff0;
+    font-family: Consolas, monospace;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(#00ff9910 1px, transparent 1px),
+      linear-gradient(90deg, #00ff9910 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+header {
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #00ff9933;
+}
+
+.logo {
+    color: #00ff99;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.status {
+    color: #00ff99;
+    font-size: 12px;
+}
+
+main {
+    max-width: 1000px;
+    margin: 120px auto;
+    padding: 20px;
+}
+
+.tag {
+    color: #00ff99;
+    letter-spacing: 4px;
+    font-size: 13px;
+}
+
+h1 {
+    font-size: clamp(38px, 8vw, 75px);
+    margin: 25px 0;
+    line-height: 1.1;
+}
+
+h1 span {
+    color: #00ff99;
+    text-shadow: 0 0 25px #00ff9970;
+}
+
+.description {
+    color: #82958b;
+    line-height: 1.8;
+    max-width: 550px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+button {
+    background: #00ff99;
+    color: #00150b;
+    border: none;
+    padding: 14px 25px;
+    font-weight: bold;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+button:hover {
+    background: white;
+    box-shadow: 0 0 20px #00ff99;
+}
+
+.outline {
+    background: transparent;
+    color: #00ff99;
+    border: 1px solid #00ff99;
+}
+
+.terminal {
+    margin-top: 75px;
+    background: #09110d;
+    border: 1px solid #00ff9955;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.terminal-header {
+    background: #102019;
+    padding: 13px;
+    color: #00ff99;
+    font-size: 12px;
+}
+
+.terminal-content {
+    padding: 25px;
+    color: #00ff99;
+    line-height: 2;
+    min-height: 140px;
+}
+
+footer {
+    text-align: center;
+    color: #52645a;
+    padding: 30px;
+    border-top: 1px solid #00ff9922;
+    font-size: 12px;
+}
+
+@media(max-width:600px) {
+    main {
+        margin: 65px auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">[ CYBER_WORLD ]</div>
+    <div class="status">● SYSTEM ONLINE</div>
+</header>
+
+<main>
+
+    <div class="tag">WELCOME TO MY DIGITAL SPACE</div>
+
+    <h1>
+        I'M A <span>DEVELOPER.</span>
+    </h1>
+
+    <p class="description">
+        Welcome to my personal website.
+        Exploring technology, programming,
+        cybersecurity and the digital world.
+    </p>
+
+    <div class="buttons">
+        <button onclick="about()">ABOUT ME</button>
+        <button class="outline" onclick="terminal()">OPEN TERMINAL</button>
+    </div>
+
+    <div class="terminal">
+        <div class="terminal-header">
+            ● ● ● &nbsp; SYSTEM_TERMINAL.exe
+        </div>
+
+        <div class="terminal-content" id="output">
+            > Initializing system...<br>
+            > Loading interface...<br>
+            > Status: <span style="color:white">READY</span><br>
+            > Waiting for command...
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    © 2026 MY CYBER WORLD // ALL RIGHTS RESERVED
+    <p id="clock" style="margin-top:10px"></p>
+</footer>
+
+<script>
+
+function about() {
+    document.getElementById("output").innerHTML =
+    "> USER PROFILE<br>" +
+    "> Name: Your Name<br>" +
+    "> Interest: Technology<br>" +
+    "> Status: Exploring the digital world.";
+}
+
+function terminal() {
+    document.getElementById("output").innerHTML =
+    "> TERMINAL OPENED<br>" +
+    "> Available commands: HELP, ABOUT, CLEAR<br>" +
+    "> This is a local visual simulation.";
+}
+
+setInterval(() => {
+    document.getElementById("clock").innerText =
+    "LOCAL TIME: " + new Date().toLocaleString();
+}, 1000);
+
+</script>
+
+</body>
+</html>
